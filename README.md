@@ -32,7 +32,7 @@ Uma aplicação web desenvolvida em **Flask** para gerenciar uma lista de desejo
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/lista-desejos-livros.git
+git clone https://github.com/LauraUrba/OraculoDosDesejos.git
 cd lista-desejos-livros
 ```
 
