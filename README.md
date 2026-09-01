@@ -1,4 +1,4 @@
-```markdown
+
 # Lista de Desejos de Livros
 
 Uma aplicação web desenvolvida em **Flask** para gerenciar uma lista de desejos de livros, permitindo ao usuário cadastrar, visualizar, editar e deletar livros, além de alternar entre temas claro e escuro.
