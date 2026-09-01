@@ -104,8 +104,23 @@ def deletar(deletar_id):
     return redirect(url_for('home'))
 
 #COKIE
-'''@app.route('/tema', methods=['POST'])  # CORRIGIDO: adicionar a barra
-def tema():'''
+@app.route('/tema', methods=['POST'])
+def tema():
+    tema = request.form.get('tema', 'claro')
+    resp = make_response(redirect(url_for('home')))
+    resp.set_cookie('tema', tema, max_age=60*60*24*30)  # 30 dias
+    flash(f'Tema alterado para {tema}!', 'success')
+    return resp@app.route('/contador', methods=['POST'])
+
+@app.route('/contador', methods=['POST'])
+def contador():
+    if 'visitas' not in session:
+        session['visitas'] = 0
+    # Incrementa o contador
+    session['visitas'] += 1
+    return jsonify({'visitas': session['visitas']})
+
+
 
 if __name__ == '__main__':
     with app.app_context():
