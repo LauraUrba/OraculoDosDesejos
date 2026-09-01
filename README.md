@@ -185,7 +185,7 @@ pip install -r requirements.txt
 
 **Desenvolvedor:** Laura  
 **Email:** urbaantuneslaura@gmail.com
-**GitHub:** [seu-usuario](https://github.com/LauraUrba)
+**GitHub:** [LauraUrba](https://github.com/LauraUrba)
 
 ## Checklist de Entrega
 
@@ -201,5 +201,3 @@ pip install -r requirements.txt
 - ✅ CSS personalizado
 - ✅ JavaScript para interações
 - ✅ README.md completo
-
-Agora seu projeto está completo e pronto para ser entregue! 🎉📚
