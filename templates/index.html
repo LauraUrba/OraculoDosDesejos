@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Meus Desejos</h1>
+
+{% if livros %}
+    <div class="row">
+        {% for livro in livros %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ livro.titulo }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ livro.autor }}</h6>
+                        <span class="badge bg-{% if livro.status == 'Lido' %}success{% elif livro.status == 'Lendo' %}warning{% else %}primary{% endif %}">
+                            {{ livro.status }}
+                        </span>
+                        <div class="mt-2">
+                            <a href="{{ url_for('livro', livro_id=livro.id) }}" class="btn btn-sm btn-info">Ver</a>
+                            <a href="{{ url_for('editar', editar_id=livro.id) }}" class="btn btn-sm btn-warning">Editar</a>
+                            <form method="POST" action="{{ url_for('deletar', deletar_id=livro.id) }}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja deletar este livro?')">
+                                <button type="submit" class="btn btn-sm btn-danger">Deletar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        Nenhum livro cadastrado. <a href="{{ url_for('cadastro') }}" class="alert-link">Adicione um livro!</a>
+    </div>
+{% endif %}
+{% endblock %}
